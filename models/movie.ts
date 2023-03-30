@@ -1,4 +1,5 @@
-import mongoose from 'mongoose'
+import mongoose, { Document } from 'mongoose'
+import { Cinema } from './cinema'
 
 export interface Movie extends Document {
   title: string
@@ -10,6 +11,7 @@ export interface Movie extends Document {
   duration: string
   cast: string
   ageRating: string
+  cinema: Cinema
 }
 
 const MovieSchema = new mongoose.Schema<Movie>({
@@ -47,6 +49,11 @@ const MovieSchema = new mongoose.Schema<Movie>({
   },
   ageRating: {
     type: String,
+    required: true,
+  },
+  cinema: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Cinema',
     required: true,
   },
 })
