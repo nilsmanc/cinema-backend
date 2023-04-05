@@ -11,7 +11,7 @@ export interface Movie extends Document {
   duration: string
   cast: string
   ageRating: string
-  cinema: Cinema
+  cinema: string
 }
 
 const MovieSchema = new mongoose.Schema<Movie>({
@@ -52,9 +52,7 @@ const MovieSchema = new mongoose.Schema<Movie>({
     required: true,
   },
   cinema: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'Cinema',
-    required: true,
+    type: String,
   },
 })
 

@@ -17,7 +17,7 @@ app.use(cors())
 
 app.get('/movies', MovieController.getAll)
 app.get('/movies/:id', MovieController.getOne)
-app.get('/cinema/movies/:id'), MovieController.getCinemaMovies
+app.get('/movies/cinema/:id', MovieController.getCinemaMovies)
 
 app.get('/cinemas', CinemaController.getAll)
 app.get('/cinemas/:id', CinemaController.getOne)
