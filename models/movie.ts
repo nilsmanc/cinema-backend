@@ -1,5 +1,4 @@
 import mongoose, { Document } from 'mongoose'
-import { Cinema } from './cinema'
 
 export interface Movie extends Document {
   title: string
@@ -12,6 +11,8 @@ export interface Movie extends Document {
   cast: string
   ageRating: string
   cinema: string
+  day: string
+  priceRatio: number
 }
 
 const MovieSchema = new mongoose.Schema<Movie>({
@@ -53,6 +54,12 @@ const MovieSchema = new mongoose.Schema<Movie>({
   },
   cinema: {
     type: String,
+  },
+  day: {
+    type: String,
+  },
+  priceRatio: {
+    type: Number,
   },
 })
 
